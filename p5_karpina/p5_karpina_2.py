@@ -1,10 +1,14 @@
 while True:
-    words = input("Write what ever you like: ")
+    words = input("Write what ever you want searated by a space: ")
     words = list(words.split())
-    comma = ",".join(words[:-1])
-    last_word = words[-1]
-    output = " and ".join([comma,last_word])
-    print(output)
+    long = len(words)
+    if long == 1:
+        print(words[0])
+    else:
+        comma = ",".join(words[:-1])
+        last_word = words[-1]
+        output = " and ".join([comma,last_word])
+        print(output)
     print("If you want stop the program press any key, if you want continue write `yes` ")  
     a = input()
     if a == "yes":

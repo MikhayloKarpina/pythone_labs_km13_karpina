@@ -20,10 +20,22 @@ def random_matrix(dim):
 
 matrix = random_matrix(x)
 print(matrix)
+print()
 
 det = np.linalg.det(matrix)
-print(round(det))
+dett = round(det)
+print(f"Determinat is {det}")
+print()
 
-matrix_per = list(itertools.permutations(matrix))
-for i in itertools.permutations(matrix):
-    print(i)
+matrix_per = list(itertools.permutations(range(len(matrix)), len(matrix)))
+print(np.matrix(matrix_per))
+print()
+
+signs = []
+sign = 1
+for i in range(len(matrix_per)):
+    for j in matrix_per[i]:
+        if i > j:
+            sign *= -1
+    signs.append(sign)
+print(signs)
